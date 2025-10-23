@@ -1,0 +1,147 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1760781782537
+  modified: 1760781782537
+  description: ""
+collection:
+  - url: http://localhost:8080/users
+    name: users
+    meta:
+      id: req_0dc174e776e14d908eeb45480bf3f9d6
+      created: 1760781824912
+      modified: 1760781855670
+      isPrivate: false
+      description: ""
+      sortKey: -1760781824912
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/users
+    name: createUser
+    meta:
+      id: req_146b94bec6ce428caa6d6caa3ef78921
+      created: 1760808626392
+      modified: 1761139812220
+      isPrivate: false
+      description: ""
+      sortKey: -1760781824862
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "user",
+        	"email": "user1@mail.com",
+        	"age": "33"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.6.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/users/15
+    name: user
+    meta:
+      id: req_5c6ebc75d8a3492382ab6285c4445660
+      created: 1760809833138
+      modified: 1760814588834
+      isPrivate: false
+      description: ""
+      sortKey: -1760781824887
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/users/1
+    name: deleteUser
+    meta:
+      id: req_530b2302f4014d1c9d14a2983aeeb3a8
+      created: 1760809855797
+      modified: 1761254205932
+      isPrivate: false
+      description: ""
+      sortKey: -1760781824874.5
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8081/mail
+    name: mail
+    meta:
+      id: req_6c2d98db2059434a965ea6d4fca80253
+      created: 1761254221415
+      modified: 1761254388922
+      isPrivate: false
+      description: ""
+      sortKey: -1760781824812
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"fromEmail": "testService@mail.com",
+        	"toEmail": "testUser@mail.com",
+        	"subject": "testSubject",
+        	"message": "testMessage"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.6.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1760781802437
+    modified: 1760781802437
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1760781802355
+    modified: 1760781802355
+    isPrivate: false
