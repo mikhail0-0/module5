@@ -1,7 +1,9 @@
 package com.example.userservice.service;
 
+import com.example.userservice.controller.UserController;
 import com.example.userservice.dto.KafkaDto;
-import com.example.userservice.dto.UserDto;
+import com.example.userservice.dto.UserRequestDto;
+import com.example.userservice.dto.UserResponseDto;
 import com.example.userservice.entity.User;
 import com.example.userservice.repository.UserRepository;
 import com.example.userservice.utils.MappingUtils;
@@ -22,11 +24,11 @@ public class UserService {
         this.kafkaProducerService = kafkaProducerService;
     }
 
-    public List<UserDto> getAllUsers() {
-        return userRepository.findAll().stream().map(mappingUtils::mapToUserDto).collect(Collectors.toList());
+    public List<UserResponseDto> getAllUsers() {
+        return userRepository.findAll().stream().map(mappingUtils::mapToUserDto).peek(u -> u.setLink(UserController.class)).collect(Collectors.toList());
     }
 
-    public UserDto getUserById(Long id) {
+    public UserResponseDto getUserById(Long id) {
         User user = userRepository.findById(id).orElse(null);
         if(user == null){
             return null;
@@ -34,8 +36,10 @@ public class UserService {
         return mappingUtils.mapToUserDto(user);
     }
 
-    public UserDto createUser(User user) {
-        UserDto userDto = mappingUtils.mapToUserDto(userRepository.save(user));
+    public UserResponseDto createUser(UserRequestDto dto) {
+        User user = mappingUtils.mapToUser(dto);
+        UserResponseDto userDto = mappingUtils.mapToUserDto(userRepository.save(user));
+
         KafkaDto kafkaDto = new KafkaDto();
         kafkaDto.setEmail(user.getEmail());
         kafkaDto.setOperation(KafkaDto.EOperationType.USER_CREATION);

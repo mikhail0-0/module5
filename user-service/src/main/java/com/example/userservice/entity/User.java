@@ -3,6 +3,7 @@ package com.example.userservice.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.hateoas.Link;
 
 import java.util.Date;
 
