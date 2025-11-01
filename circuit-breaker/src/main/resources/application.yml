@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: circuit-breaker
+  cloud:
+    config:
+      uri: http://localhost:8888

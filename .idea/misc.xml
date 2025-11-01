@@ -6,6 +6,11 @@
       <list>
         <option value="$PROJECT_DIR$/user-service/pom.xml" />
         <option value="$PROJECT_DIR$/notification-service/pom.xml" />
+        <option value="$PROJECT_DIR$/gatewai-api/pom.xml" />
+        <option value="$PROJECT_DIR$/service-discovery/pom.xml" />
+        <option value="$PROJECT_DIR$/circuit-breaker/pom.xml" />
+        <option value="$PROJECT_DIR$/external-configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway-api/pom.xml" />
       </list>
     </option>
   </component>

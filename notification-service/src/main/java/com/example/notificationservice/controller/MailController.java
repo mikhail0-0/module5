@@ -2,11 +2,9 @@ package com.example.notificationservice.controller;
 
 import com.example.notificationservice.dto.SendEmailDto;
 import com.example.notificationservice.service.MailService;
+import org.apache.http.HttpException;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("mail")
